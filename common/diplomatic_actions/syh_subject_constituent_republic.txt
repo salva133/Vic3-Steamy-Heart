@@ -2,7 +2,8 @@
 	groups= {
 		general # for breaking only
 	}
-	show_in_lens = no
+	texture = gfx/interface/icons/lens_toolbar_icons/constituent_republic.dds
+	show_in_lens = yes
 
 	potential = { # Only created through diplomatic plays
 		always = no
@@ -19,7 +20,7 @@
 		relations_progress_per_day = 1
 		relations_improvement_max = 50
 
-		subject_type = subject_type_puppet
+		subject_type = subject_type_constituent_republic
 
 		second_modifier = {
 			country_law_enactment_imposition_success_add = 0.1
@@ -44,7 +45,6 @@
 	}
 
 	ai = {
-
 		will_break = {
 			always = no
 		}

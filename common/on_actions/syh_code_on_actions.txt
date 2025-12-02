@@ -2,9 +2,9 @@
 	on_actions = {
 		socialism_for_the_world
 		create_soviet_union
-		create_german_soviet_republic
-
+		create_soviet_republics
 		create_soviet_bloc
+		reorganise_states
 	}
 }
 
@@ -21,14 +21,28 @@ socialism_for_the_world = {
 
 create_soviet_union = {
 	effect = {
-		c:RUS ?= { set_up_soviet_gov = yes }
+		c:RUS ?= {
+			set_up_soviet_gov = yes
+			create_power_bloc = {
+				name = eastern_bloc
+				map_color = { 200 0 0 }
+				founding_date = 1800.1.1
+				identity = identity_ideological_union
+				principle = principle_creative_legislature_1
+			}
+		}
 	}
 }
 
-create_german_soviet_republic = {
+create_soviet_republics = {
 	effect = {
 		c:PRU ?= { change_tag = GER }
 		c:GER ?= { set_up_soviet_gov = yes }
+		c:AUS ?= { set_up_soviet_gov = yes }
+		c:HUN ?= { set_up_soviet_gov = yes }
+		c:UBD ?= { set_up_soviet_gov = yes }
+		c:FIN ?= { set_up_soviet_gov = yes }
+		c:GAL ?= { set_up_soviet_gov = yes }
 	}
 }
 
@@ -39,6 +53,47 @@ create_soviet_bloc = {
 				country = c:GER
 				type = constituent_republic
 			}
+			create_diplomatic_pact = {
+				country = c:AUS
+				type = constituent_republic
+			}
+			create_diplomatic_pact = {
+				country = c:HUN
+				type = constituent_republic
+			}
+			create_diplomatic_pact = {
+				country = c:UBD
+				type = constituent_republic
+			}
+			create_diplomatic_pact = {
+				country = c:FIN
+				type = constituent_republic
+			}
+			create_diplomatic_pact = {
+				country = c:GAL
+				type = constituent_republic
+			}
+		}
+	}
+}
+
+reorganise_states = {
+	effect = {
+		every_state = {
+			limit = {
+				owner = {
+					country_has_primary_culture = cu:north_german
+				}
+			}
+			set_state_owner = c:GER
+		}
+		every_state = {
+			limit = {
+				owner = {
+					country_has_primary_culture = cu:south_german
+				}
+			}
+			set_state_owner = c:AUS
 		}
 	}
 }
