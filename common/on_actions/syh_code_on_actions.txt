@@ -1,0 +1,53 @@
+﻿on_game_started = {
+	on_actions = {
+		socialism_for_the_world
+		create_soviet_union
+		create_german_soviet_republic
+	}
+}
+
+socialism_for_the_world = {
+	effect = {
+		every_country = {
+			limit = {
+				NOT = { has_technology_researched = socialism }
+			}
+			add_technology_researched = socialism
+		}
+	}
+}
+
+create_soviet_union = {
+	effect = {
+		c:RUS ?= {
+			activate_law = law_type:law_council_republic
+			activate_law = law_type:law_single_party_state
+			activate_law = law_type:law_multicultural
+			activate_law = law_type:law_state_atheism
+			activate_law = law_type:law_mass_conscription
+			activate_law = law_type:law_secret_police
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_protectionism
+			activate_law = law_type:law_militarized_police
+			activate_law = law_type:law_collectivized_agriculture
+			activate_law = law_type:law_outlawed_dissent
+			activate_law = law_type:law_womens_suffrage
+			activate_law = law_type:law_no_migration_controls
+			activate_law = law_type:law_corporatized_unions
+			create_character = {
+				ideology = ideology_communist
+				on_created = {
+					set_character_as_ruler = yes
+				}
+			}
+		}
+	}
+}
+
+create_german_soviet_republic = {
+	effect = {
+		c:PRU ?= {
+			change_tag = GER
+		}
+	}
+}
