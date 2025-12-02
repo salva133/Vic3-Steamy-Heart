@@ -3,6 +3,8 @@
 		socialism_for_the_world
 		create_soviet_union
 		create_german_soviet_republic
+
+		create_soviet_bloc
 	}
 }
 
@@ -10,44 +12,33 @@ socialism_for_the_world = {
 	effect = {
 		every_country = {
 			limit = {
-				NOT = { has_technology_researched = socialism }
+				NOT = { is_country_type = decentralized }
 			}
-			add_technology_researched = socialism
 		}
+		give_socialism = yes
 	}
 }
 
 create_soviet_union = {
 	effect = {
-		c:RUS ?= {
-			activate_law = law_type:law_council_republic
-			activate_law = law_type:law_single_party_state
-			activate_law = law_type:law_multicultural
-			activate_law = law_type:law_state_atheism
-			activate_law = law_type:law_mass_conscription
-			activate_law = law_type:law_secret_police
-			activate_law = law_type:law_command_economy
-			activate_law = law_type:law_protectionism
-			activate_law = law_type:law_militarized_police
-			activate_law = law_type:law_collectivized_agriculture
-			activate_law = law_type:law_outlawed_dissent
-			activate_law = law_type:law_womens_suffrage
-			activate_law = law_type:law_no_migration_controls
-			activate_law = law_type:law_corporatized_unions
-			create_character = {
-				ideology = ideology_communist
-				on_created = {
-					set_character_as_ruler = yes
-				}
-			}
-		}
+		c:RUS ?= { set_up_soviet_gov = yes }
 	}
 }
 
 create_german_soviet_republic = {
 	effect = {
-		c:PRU ?= {
-			change_tag = GER
+		c:PRU ?= { change_tag = GER }
+		c:GER ?= { set_up_soviet_gov = yes }
+	}
+}
+
+create_soviet_bloc = {
+	effect = {
+		c:RUS ?= {
+			create_diplomatic_pact = {
+				country = c:GER
+				type = constituent_republic
+			}
 		}
 	}
 }
