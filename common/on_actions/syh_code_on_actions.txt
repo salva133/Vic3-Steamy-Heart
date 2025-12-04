@@ -137,16 +137,11 @@ reorganise_states = {
 create_contrabolshevist_italy = {
 	effect = {
 		c:PAP ?= {
-			change_tag = c:ITA
+			change_tag = ITA
 		}
 		every_state = {
 			limit = {
-				owner = {
-					OR = {
-						country_has_primary_culture = cu:north_italian
-						country_has_primary_culture = cu:south_italian
-					}
-				}
+				is_homeland_of_country_cultures = c:ITA
 			}
 			set_state_owner = c:ITA
 		}
