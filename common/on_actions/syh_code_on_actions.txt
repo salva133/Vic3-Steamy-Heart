@@ -165,7 +165,7 @@ set_up_balkans = {
 			set_state_owner = c:YUG
 		}
 		c:YUG ?= {
-			set_up_yugoslavian_gov = yes
+			set_up_soft_commie_gov = yes
 		}
 		s:STATE_BULGARIA = {
 			every_scope_state = {
@@ -177,7 +177,7 @@ set_up_balkans = {
 			origin = c:YUG
 			state = scope:capital_state
 			on_created = {
-				set_up_yugoslavian_gov = yes
+				set_up_soft_commie_gov = yes
 			}
 		}
 		every_state = {

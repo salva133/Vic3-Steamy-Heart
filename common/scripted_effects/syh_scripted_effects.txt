@@ -22,7 +22,7 @@
 	}
 }
 
-set_up_yugoslavian_gov = {
+set_up_soft_commie_gov = {
 	give_corporatism = yes
 	activate_law = law_type:law_council_republic
 	activate_law = law_type:law_single_party_state
