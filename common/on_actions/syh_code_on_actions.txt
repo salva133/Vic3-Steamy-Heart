@@ -5,10 +5,11 @@
 		create_soviet_bloc
 		reorganise_states
 		create_contrabolshevist_italy
-		set_up_balkans
-		create_ukrainian_soviet_republic
+		create_yugoslavian_federation
+		create_romanian_soviet_republic
 		create_white_russian_soviet_republic
 		create_polish_soviet_republic
+		create_ukrainian_soviet_republic
 	}
 }
 
@@ -149,7 +150,7 @@ create_contrabolshevist_italy = {
 	}
 }
 
-set_up_balkans = {
+create_yugoslavian_federation = {
 	effect = {
 		c:SER ?= {
 			make_independent = yes
@@ -189,51 +190,25 @@ set_up_balkans = {
 				type = constituent_republic
 			}
 		}
-		c:WAL ?= {
-			make_independent = yes
-			set_up_soviet_gov = yes
-		}
-		c:MOL ?= {
-			make_independent = yes
-			set_up_soviet_gov = yes
-		}
-		c:RUS ?= {
-			create_diplomatic_pact = {
-				country = c:WAL
-				type = constituent_republic
-			}
-			create_diplomatic_pact = {
-				country = c:MOL
-				type = constituent_republic
-			}
-		}
 	}
 }
 
-create_ukrainian_soviet_republic = {
+create_romanian_soviet_republic = {
 	effect = {
-		s:STATE_KIEV = {
-			every_scope_state = {
-				save_scope_as = capital_state
-			}
-		}
-		create_country = {
-			tag = UKR
-			origin = c:RUS
-			state = scope:capital_state
-			on_created = {
-				set_up_soviet_gov  = yes
-			}
+		c:WAL ?= {
+			make_independent = yes
+			set_up_soviet_gov = yes
+			change_tag = ROM
 		}
 		every_state = {
 			limit = {
-				is_homeland_of_country_cultures = c:UKR
+				is_homeland_of_country_cultures = c:ROM
 			}
-			set_state_owner = c:UKR
+			set_state_owner = c:ROM
 		}
-		c:RUS = {
+		c:RUS ?= {
 			create_diplomatic_pact = {
-				country = c:UKR
+				country = c:ROM
 				type = constituent_republic
 			}
 		}
@@ -272,7 +247,7 @@ create_white_russian_soviet_republic = {
 
 create_polish_soviet_republic = {
 	effect = {
-		s:STATE_MINSK = {
+		s:STATE_GREATER_POLAND = {
 			every_scope_state = {
 				save_scope_as = capital_state
 			}
@@ -294,6 +269,36 @@ create_polish_soviet_republic = {
 		c:RUS = {
 			create_diplomatic_pact = {
 				country = c:POL
+				type = constituent_republic
+			}
+		}
+	}
+}
+
+create_ukrainian_soviet_republic = {
+	effect = {
+		s:STATE_KIEV = {
+			every_scope_state = {
+				save_scope_as = capital_state
+			}
+		}
+		create_country = {
+			tag = UKR
+			origin = c:RUS
+			state = scope:capital_state
+			on_created = {
+				set_up_soviet_gov  = yes
+			}
+		}
+		every_state = {
+			limit = {
+				is_homeland_of_country_cultures = c:UKR
+			}
+			set_state_owner = c:UKR
+		}
+		c:RUS = {
+			create_diplomatic_pact = {
+				country = c:UKR
 				type = constituent_republic
 			}
 		}
