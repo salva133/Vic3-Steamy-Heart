@@ -48,6 +48,7 @@ syh_starter.1 = {
 			create_czech_soviet_republic = yes
 			create_slovak_soviet_republic = yes
 			organise_southern_balkan = yes
+			create_lithuanian_soviet_republic = yes
 		}
 	}
 }

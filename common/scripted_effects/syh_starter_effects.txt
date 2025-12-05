@@ -421,3 +421,31 @@ organise_southern_balkan = {
 		state = scope:capital_state
 	}
 }
+
+create_lithuanian_soviet_republic = {
+	s:STATE_KAUNAS = {
+		every_scope_state = {
+			save_scope_as = capital_state
+		}
+	}
+	create_country = {
+		tag = LIT
+		origin = c:RUS
+		state = scope:capital_state
+		on_created = {
+			set_up_soviet_gov  = yes
+		}
+	}
+	every_state = {
+		limit = {
+			is_homeland_of_country_cultures = c:LIT
+		}
+		set_state_owner = c:LIT
+	}
+	c:RUS ?= {
+		create_diplomatic_pact = {
+			country = c:LIT
+			type = constituent_republic
+		}
+	}
+}
