@@ -4,8 +4,8 @@ syh_starter.1 = {
 	type = country_event
 	placement = root
 
-	title = syh_starter.1.tt
-	desc = syh_starter.1.dd
+	title =  syh_starter.1.tt
+	desc =   syh_starter.1.dd
 	flavor = syh_starter.1.ff
 
 	duration = 1
@@ -32,9 +32,21 @@ syh_starter.1 = {
 	}
 	option = {
 		name = syh_starter.1.b
-		
-		custom_tooltip = {
-			text = This_is_where_the_fun_begins
+		set_global_variable = made_ussr_globvar
+	}
+	option = {
+		name = syh_starter.1.c
+		set_global_variable = made_esu_globvar
+	}
+	
+	after = {
+		if = {
+			limit = {
+				OR = {
+					has_global_variable = made_ussr_globvar
+					has_global_variable = made_esu_globvar
+				}
+			}
 			socialism_for_the_world = yes
 			create_soviet_union = yes
 			create_soviet_bloc = yes
