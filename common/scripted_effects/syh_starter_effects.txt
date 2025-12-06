@@ -7,13 +7,6 @@
 	give_socialism = yes
 }
 
-create_soviet_union = {
-	if = {
-		limit = { has_global_variable = made_ussr_globvar }
-		c:RUS ?= { set_up_soviet_gov = yes }
-	}
-}
-
 create_soviet_bloc = {
 	c:PRU ?= { change_tag = NGF }
 	c:BAV ?= { change_tag = SGF }
@@ -25,6 +18,7 @@ create_soviet_bloc = {
 	if = {
 		limit = { has_global_variable = made_ussr_globvar }
 		c:RUS ?= {
+			set_up_soviet_gov = yes
 			create_diplomatic_pact = {
 				country = c:NGF
 				type = constituent_republic

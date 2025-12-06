@@ -38,7 +38,7 @@ syh_starter.1 = {
 		name = syh_starter.1.c
 		set_global_variable = made_esu_globvar
 	}
-	
+
 	after = {
 		if = {
 			limit = {
@@ -48,7 +48,6 @@ syh_starter.1 = {
 				}
 			}
 			socialism_for_the_world = yes
-			create_soviet_union = yes
 			create_soviet_bloc = yes
 			organise_german_states = yes
 			create_contrabolshevist_italy = yes
