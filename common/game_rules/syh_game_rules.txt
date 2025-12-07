@@ -1,0 +1,9 @@
+﻿steamy_heart_content = {
+	default = no_syh_content
+
+	no_syh_content = {}
+
+	create_ussr = {}
+
+	create_esu = {}
+}

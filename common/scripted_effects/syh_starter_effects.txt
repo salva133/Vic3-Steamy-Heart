@@ -12,7 +12,7 @@ create_soviet_bloc = {
 	c:HUN ?= { set_up_soviet_gov = yes }
 	c:UBD ?= { set_up_soviet_gov = yes }
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			set_up_soviet_gov = yes
 			create_diplomatic_pact = {
@@ -140,7 +140,7 @@ organise_german_states = {
 
 	# ESU PB
 	if = {
-		limit = { has_global_variable = made_esu_globvar }
+		limit = { has_game_rule = create_esu }
 		c:NGF ?= {
 			create_power_bloc = {
 				name = pb_european_socialist_union
@@ -270,7 +270,7 @@ create_romanian_soviet_republic = {
 		set_state_owner = c:ROM
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:ROM
@@ -302,7 +302,7 @@ create_white_russian_soviet_republic = {
 		set_state_owner = c:BYE
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:BYE
@@ -334,7 +334,7 @@ create_polish_soviet_republic = {
 		set_state_owner = c:POL
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:POL
@@ -366,7 +366,7 @@ create_ukrainian_soviet_republic = {
 		set_state_owner = c:UKR
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:UKR
@@ -404,7 +404,7 @@ create_czech_soviet_republic = {
 		set_state_owner = c:BOH
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:BOH
@@ -436,7 +436,7 @@ create_slovak_soviet_republic = {
 		set_state_owner = c:SLV
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:SLV
@@ -494,7 +494,7 @@ create_lithuanian_soviet_republic = {
 		set_state_owner = c:LIT
 	}
 	if = {
-		limit = { has_global_variable = made_ussr_globvar }
+		limit = { has_game_rule = create_ussr }
 		c:RUS ?= {
 			create_diplomatic_pact = {
 				country = c:LIT

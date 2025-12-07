@@ -1,0 +1,8 @@
+﻿l_english:
+  rule_steamy_heart_content: "#red Steamy Heart#! Content"
+  setting_create_ussr: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_create_ussr#!#!"
+  setting_create_ussr_desc: "The USSR and its \"constituent republics\" gets created.\nFascist Italy gets created too."
+  setting_create_esu: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_create_esu #!#!"
+  setting_create_esu_desc: "The Union of european socialist states gets set up.\nFascist Italy gets created too."
+  setting_no_syh_content: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_no_syh_content#!#!"
+  setting_no_syh_content_desc: "Vanilla content, no fancy shit..."
