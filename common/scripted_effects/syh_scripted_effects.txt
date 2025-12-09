@@ -15,22 +15,9 @@
 	activate_law = law_type:law_no_migration_controls
 	activate_law = law_type:law_slavery_banned
 	activate_law = law_type:law_corporatized_unions
-	every_scope_politician = {
-		limit = {
-			NOT = { has_ideology = ideology:ideology_communist }
-		}
-		set_ideology = ideology:ideology_communist
-	}
-	every_scope_state = {
-		limit = {
-			NOT = { has_modifier = modifier_strong_communist_bias }
-		}
-		add_modifier = {
-			name = modifier_strong_communist_bias
-			years = 100
-			is_decaying = yes
-		}
-	}
+
+	make_all_politicians_communist = yes
+	give_all_states_strong_communist_bias = yes
 }
 
 set_up_soft_commie_gov = {
@@ -50,12 +37,9 @@ set_up_soft_commie_gov = {
 	activate_law = law_type:law_no_migration_controls
 	activate_law = law_type:law_slavery_banned
 	activate_law = law_type:law_corporatized_unions
-	every_scope_politician = {
-		limit = {
-			NOT = { has_ideology = ideology:ideology_communist }
-		}
-		set_ideology = ideology:ideology_communist
-	}
+
+	make_all_politicians_communist = yes
+	give_all_states_strong_communist_bias = yes
 }
 
 give_socialism = {
@@ -191,22 +175,9 @@ set_up_fascist_gov = {
 	activate_law = law_type:law_women_in_the_workplace
 	activate_law = law_type:law_wage_subsidies
 	activate_law = law_type:law_corporatized_unions
-	every_scope_politician = {
-		limit = {
-			NOT = { has_ideology = ideology:ideology_fascist }
-		}
-		set_ideology = ideology:ideology_fascist
-	}
-	every_scope_state = {
-		limit = {
-			NOT = { has_modifier = modifier_strong_fascist_bias }
-		}
-		add_modifier = {
-			name = modifier_strong_fascist_bias
-			years = 100
-			is_decaying = yes
-		}
-	}
+
+	make_all_politicians_fascist = yes
+	give_all_states_strong_fascist_bias = yes
 }
 
 give_central_archives = {
@@ -242,5 +213,49 @@ give_central_archives = {
 	if = {
 		limit = { NOT = { has_technology_researched = central_archives } }
 		add_technology_researched = central_archives
+	}
+}
+
+give_all_states_strong_communist_bias = {
+	every_scope_state = {
+		limit = {
+			NOT = { has_modifier = modifier_strong_communist_bias }
+		}
+		add_modifier = {
+			name = modifier_strong_communist_bias
+			years = 100
+			is_decaying = yes
+		}
+	}
+}
+
+make_all_politicians_communist = {
+	every_scope_politician = {
+		limit = {
+			NOT = { has_ideology = ideology:ideology_communist }
+		}
+		set_ideology = ideology:ideology_communist
+	}
+}
+
+give_all_states_strong_fascist_bias = {
+	every_scope_state = {
+		limit = {
+			NOT = { has_modifier = modifier_strong_fascist_bias }
+		}
+		add_modifier = {
+			name = modifier_strong_fascist_bias
+			years = 100
+			is_decaying = yes
+		}
+	}
+}
+
+make_all_politicians_fascist = {
+	every_scope_politician = {
+		limit = {
+			NOT = { has_ideology = ideology:ideology_fascist }
+		}
+		set_ideology = ideology:ideology_fascist
 	}
 }
