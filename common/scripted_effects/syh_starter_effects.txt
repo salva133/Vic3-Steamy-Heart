@@ -80,8 +80,7 @@ create_soviet_bloc = {
 	}
 }
 
-organise_german_states = {
-	# NGF
+create_socialist_ngf = {
 	c:PRU ?= {
 		capital = { save_scope_as = capital_state }
 	}
@@ -108,7 +107,9 @@ organise_german_states = {
 		}
 		set_state_owner = c:NGF
 	}
-	# SGF
+}
+
+create_socialist_sgf = {
 	c:BAV ?= {
 		capital = { save_scope_as = capital_state }
 	}
@@ -136,33 +137,6 @@ organise_german_states = {
 			}
 		}
 		set_state_owner = c:SGF
-	}
-
-	# ESU PB
-	if = {
-		limit = { has_game_rule = create_esu }
-		c:NGF ?= {
-			create_power_bloc = {
-				name = pb_european_socialist_union
-				map_color = { 200 0 0 }
-				founding_date = 1836.1.1
-				identity = identity_ideological_union
-				principle = principle_ideological_truth_3
-
-				member = c:SGF
-				member = c:AUS
-				member = c:HUN
-				member = c:UBD
-				member = c:YUG
-				member = c:BYE
-				member = c:POL
-				member = c:UKR
-				member = c:BOH
-				member = c:SLV
-				member = c:ALB
-				member = c:LIT
-			}
-		}
 	}
 }
 
@@ -446,32 +420,6 @@ create_slovak_soviet_republic = {
 	}
 }
 
-organise_southern_balkan = {
-	s:STATE_THESSALIA = {
-		every_scope_state = {
-			set_state_owner = c:GRE
-		}
-	}
-	s:STATE_MACEDONIA = {
-		every_scope_state = {
-			set_state_owner = c:GRE
-		}
-	}
-	s:STATE_ALBANIA = {
-		every_scope_state = {
-			save_scope_as = capital_state
-		}
-	}
-	create_country = {
-		tag = ALB
-		origin = c:YUG
-		state = scope:capital_state
-		on_created = {
-			set_up_soft_commie_gov = yes
-		}
-	}
-}
-
 create_lithuanian_soviet_republic = {
 	s:STATE_KAUNAS = {
 		every_scope_state = {
@@ -499,6 +447,64 @@ create_lithuanian_soviet_republic = {
 			create_diplomatic_pact = {
 				country = c:LIT
 				type = constituent_republic
+			}
+		}
+	}
+}
+
+create_socialist_albania = {
+	s:STATE_ALBANIA = {
+		every_scope_state = {
+			save_scope_as = capital_state
+		}
+	}
+	create_country = {
+		tag = ALB
+		origin = c:YUG
+		state = scope:capital_state
+		on_created = {
+			set_up_soft_commie_gov = yes
+		}
+	}
+}
+
+organise_southern_balkan = {
+	s:STATE_THESSALIA = {
+		every_scope_state = {
+			set_state_owner = c:GRE
+		}
+	}
+	s:STATE_MACEDONIA = {
+		every_scope_state = {
+			set_state_owner = c:GRE
+		}
+	}
+}
+
+create_pb_esu = {
+	# ESU PB
+	if = {
+		limit = { has_game_rule = create_esu }
+		c:NGF ?= {
+			create_power_bloc = {
+				name = pb_european_socialist_union
+				map_color = { 200 0 0 }
+				founding_date = 1836.1.1
+				identity = identity_ideological_union
+				principle = principle_ideological_truth_1
+
+				member = c:SGF
+				member = c:AUS
+				member = c:HUN
+				member = c:UBD
+				member = c:YUG
+				member = c:BYE
+				member = c:POL
+				member = c:UKR
+				member = c:BOH
+				member = c:SLV
+				member = c:ALB
+				member = c:LIT
 			}
 		}
 	}

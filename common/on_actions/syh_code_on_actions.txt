@@ -12,7 +12,8 @@ syh_init = {
 			}
 			socialism_for_the_world = yes
 			create_soviet_bloc = yes
-			organise_german_states = yes
+			create_socialist_ngf = yes
+			create_socialist_sgf = yes
 			create_contrabolshevist_italy = yes
 			create_yugoslavian_federation = yes
 			create_romanian_soviet_republic = yes
@@ -21,8 +22,10 @@ syh_init = {
 			create_ukrainian_soviet_republic = yes
 			create_czech_soviet_republic = yes
 			create_slovak_soviet_republic = yes
-			organise_southern_balkan = yes
 			create_lithuanian_soviet_republic = yes
+			create_socialist_albania = yes
+			organise_southern_balkan = yes
+			create_pb_esu = yes
 		}
 	}
 }
