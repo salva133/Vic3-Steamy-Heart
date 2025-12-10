@@ -1,10 +1,22 @@
 ﻿on_game_started = {
 	on_actions = {
-		syh_init
+		on_game_started_syh_init
 	}
 }
 
-syh_init = {
+on_game_started_after_lobby = {
+	on_actions = {
+		on_game_started_after_lobby_create_pb_esu
+	}
+}
+
+on_game_started_after_lobby_create_pb_esu = {
+	effect = {
+		create_pb_esu = yes
+	}
+}
+
+on_game_started_syh_init = {
 	effect = {
 		if = {
 			limit = {
