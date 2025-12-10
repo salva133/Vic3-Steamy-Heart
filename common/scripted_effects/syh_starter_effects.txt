@@ -10,9 +10,9 @@
 create_soviet_bloc = {
 	c:AUS ?= { set_up_soviet_gov = yes }
 	c:HUN ?= { set_up_soviet_gov = yes }
-	c:UBD ?= { set_up_soviet_gov = yes }
 	if = {
 		limit = { has_game_rule = create_ussr }
+		c:UBD ?= { set_up_soviet_gov = yes }
 		c:RUS ?= {
 			set_up_soviet_gov = yes
 			create_diplomatic_pact = {
@@ -488,30 +488,50 @@ create_pb_esu = {
 		c:NGF ?= {
 			create_power_bloc = {
 				name = pb_european_socialist_union
-				map_color = { 200 0 0 }
+				map_color = { 89 39 32 }
 				founding_date = 1836.1.1
 				identity = identity_ideological_union
 				principle = principle_ideological_truth_3
+				principle = principle_market_unification_3
+				principle = principle_transport_3
+				principle = principle_freedom_of_movement_3
 
-				member = c:SGF
-				member = c:UBD
-				member = c:YUG
-				member = c:BYE
-				member = c:POL
-				member = c:UKR
-				member = c:BOH
-				member = c:SLV
-				member = c:ALB
-				member = c:LIT
-				member = c:ROM
+				member ?= c:SGF
+				member ?= c:UBD
+				member ?= c:YUG
+				# member ?= c:BYE
+				member ?= c:POL
+				# member ?= c:UKR
+				member ?= c:BOH
+				member ?= c:SLV
+				member ?= c:ALB
+				member ?= c:LIT
+				member ?= c:ROM
 			}
-			create_diplomatic_pact = {
-				country = c:AUS
-				type = constituent_republic
+			power_bloc ?= {
+				add_cohesion_percent = 100
 			}
-			create_diplomatic_pact = {
-				country = c:HUN
-				type = constituent_republic
+			if = {
+				limit = {
+					NOT = {
+						c:AUS ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:AUS
+					type = constituent_republic
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:HUN ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:HUN
+					type = constituent_republic
+				}
 			}
 		}
 	}

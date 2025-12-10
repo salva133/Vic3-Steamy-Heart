@@ -1,5 +1,5 @@
 ﻿l_english:
   constituent_republic: "Constituent Republic"
   constituent_republic_desc: "The supreme power rests with the people, typically exercised through elected representatives, and is part of a larger federation or union of states. Each constituent entity retains some degree of self-governance while being subject to the overarching authority of the central government"
+  constituent_republic_effect_desc_global: "Becomes a $constituent_republic$"
   subject_type_constituent_republic: "$constituent_republic$"
-  eastern_bloc: "Union of Socialist States"
