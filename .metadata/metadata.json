@@ -2,7 +2,7 @@
   "name" : "Steamy Heart",
 	"id" : "",
   "version" : "0.1",
-  "supported_game_version" : "1.11.1",
+  "supported_game_version" : "1.12.*",
   "short_description" : "",
   "tags" : [],
   "relationships" : [],
