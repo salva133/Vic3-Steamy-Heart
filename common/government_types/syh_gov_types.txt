@@ -1,0 +1,18 @@
+﻿gov_ducist_regime = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_DUCE"
+	female_ruler = "RULER_TITLE_DUCESSA"
+
+	possible = {
+		c:ITA ?= this
+		country_has_fascist_government = yes
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
