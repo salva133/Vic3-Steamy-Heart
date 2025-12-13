@@ -4,7 +4,7 @@
 		adjective = root_adj
 
 		is_main_tag_only = yes
-		priority = 5
+		priority = 6
 
 		trigger = {
 			scope:actor ?= {
@@ -17,7 +17,7 @@
 		adjective = root_adj_soviet
 
 		is_main_tag_only = yes
-		priority = 10
+		priority = 6
 
 		trigger = {
 			scope:actor ?= {
@@ -35,7 +35,7 @@
 		adjective = root_adj
 
 		is_main_tag_only = yes
-		priority = 10
+		priority = 6
 
 		trigger = {
 			scope:actor ?= {
