@@ -1,4 +1,4 @@
-je_bringing_the_world_revolution = {
+﻿je_bringing_the_world_revolution = {
 	icon = gfx/interface/icons/invention_icons/socialism.dds
 
 	group = je_group_crises
@@ -7,23 +7,17 @@ je_bringing_the_world_revolution = {
 	can_deactivate = yes
 
 	is_shown_in_lobby = {
-		capital = {
-			is_in_geographic_region = geographic_region_europe
-		}
+		country_is_in_europe = yes
 		has_law_or_variant = law_type:law_council_republic
 	}
 	
 	is_shown_when_inactive = {
-		capital = {
-			is_in_geographic_region = geographic_region_europe
-		}
+		country_is_in_europe = yes
 		has_law_or_variant = law_type:law_council_republic
 	}
 	
 	possible = {
-		capital = {
-			is_in_geographic_region = geographic_region_europe
-		}
+		country_is_in_europe = yes
 		has_law_or_variant = law_type:law_council_republic
 	}
 
@@ -34,10 +28,8 @@ je_bringing_the_world_revolution = {
 	complete = {
 		any_country = {
 			count = all
-			capital = {
-				is_in_geographic_region = geographic_region_europe
-			}
-			has_law_or_variant = council_republic
+			country_is_in_europe = yes
+			has_law_or_variant = law_type:law_council_republic
 		}
 	}
 
@@ -48,10 +40,8 @@ je_bringing_the_world_revolution = {
 	fail = {
 		any_country = {
 			count = 0
-			capital = {
-				is_in_geographic_region = geographic_region_europe
-			}
-			has_law_or_variant = council_republic
+			country_is_in_europe = yes
+			has_law_or_variant = law_type:law_council_republic
 		}
 	}
 
