@@ -1,6 +1,6 @@
-﻿namespace = modifier_adaption
+﻿namespace = modifier_management
 
-modifier_adaption.1 = {
+modifier_management.1 = {
 	type = state_event
 	hidden = yes
 
@@ -29,7 +29,7 @@ modifier_adaption.1 = {
 	}
 }
 
-modifier_adaption.2 = {
+modifier_management.2 = {
 	type = state_event
 	hidden = yes
 
