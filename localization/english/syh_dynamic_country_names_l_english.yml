@@ -3,12 +3,6 @@
   root_adj: "$ADJECTIVE$"
   root_adj_soviet: "Soviet $ADJECTIVE$"
 
-# Country-based Names
-  dyn_c_fascist_italy: "State of Italy"
-
-# Government-based Names
-  dyn_c_communist_republic: "Democratic $ADJECTIVE$ Republic"
-
 # Relation-based Names
   dyn_c_constituent_soviet_republic: "$ADJECTIVE$ SSR"
   dyn_c_volkssektor: "$ADJECTIVE$ Volkssektor"
