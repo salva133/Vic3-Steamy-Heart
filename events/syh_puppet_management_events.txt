@@ -74,17 +74,23 @@ puppet_management.2 = {
 	}
 
 	immediate = {
-		overlord.capital = {
-			save_scope_as = overlord_capital
-		}
+		overlord.capital = { save_scope_as = overlord_capital }
+		root = { save_scope_as = puppet }
 	}
 	
 	option = {
 		name = puppet_management.2.a
 		default_option = yes
 
+		activate_law = law_type:law_council_republic
 		overlord ?= { 
-			regime_change = root
+			regime_change = scope:puppet
+			hidden_effect = {
+				create_diplomatic_pact = {
+					country = scope:puppet
+					type = constituent_republic
+				}
+			}
 		}
 		change_relations = {
 			country = overlord
@@ -98,6 +104,12 @@ puppet_management.2 = {
 		change_relations = {
 			country = overlord
 			value = -200
+		}
+		random_scope_state = {
+			limit = {
+				is_adjacent_to_country = root.overlord
+			}
+			add_claim = root.overlord
 		}
 	}
 }

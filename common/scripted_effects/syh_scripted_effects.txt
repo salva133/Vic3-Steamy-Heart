@@ -259,3 +259,22 @@ make_all_politicians_fascist = {
 		set_ideology = ideology:ideology_fascist
 	}
 }
+
+INJECT:remove_subject_diplomatic_pact = {
+	if = {
+		limit = {
+			this = {
+				has_diplomatic_pact = {
+					who = root
+					type = constituent_republic
+				}
+			}
+		}
+		this = {
+			remove_diplomatic_pact = {
+				country = root
+				type = constituent_republic
+			}
+		}
+	}
+}
