@@ -38,8 +38,9 @@ on_monthly_pulse_country = {
 
 on_monthly_pulse_country_puppet_management = {
 	random_events = {
-		90 = 0
+		88 = 0
 		10 = puppet_management.1
+		2 = puppet_management.2
 	}
 }
 
