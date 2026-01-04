@@ -1,39 +1,40 @@
-﻿ITA = { # Italy
-	dynamic_country_name = { # Papal Italy
-		name = dyn_c_papal_italy
-		adjective = dyn_c_papal_italy_adj
+﻿INJECT:DEFAULT = {
+	dynamic_country_name = {
+		name = dyn_c_constituent_soviet_republic
+		adjective = root_adj_soviet
 
 		is_main_tag_only = yes
-		priority = 5
+		priority = 6
 
 		trigger = {
-			exists = scope:actor
 			scope:actor ?= {
-				has_law_or_variant = law_type:law_theocracy
-				was_formed_from = PAP
+				is_subject = yes
+				is_subject_of = c:RUS
+				c:RUS ?= {
+					has_law_or_variant = law_type:law_council_republic
+				}
+				has_law_or_variant = law_type:law_council_republic
 			}
 		}
 	}
-	dynamic_country_name = { # Fascist Italy
-		name = dyn_c_fascist_italy
-		adjective = ITA_ADJ
+	dynamic_country_name = {
+		name = dyn_c_volkssektor
+		adjective = root_adj
 
 		is_main_tag_only = yes
-		priority = 5
+		priority = 6
 
 		trigger = {
 			scope:actor ?= {
-				OR = {
-					has_law_or_variant = law_type:law_presidential_republic
-					has_law_or_variant = law_type:law_parliamentary_republic
-					has_law_or_variant = law_type:law_corporate_state
+				is_subject = yes
+				overlord ?= {
+					OR = {
+						country_has_primary_culture = cu:north_german
+						country_has_primary_culture = cu:south_german
+					}
+					has_law_or_variant = law_type:law_council_republic
 				}
-				OR = {
-					has_law_or_variant = law_type:law_autocracy
-					has_law_or_variant = law_type:law_oligarchy
-					has_law_or_variant = law_type:law_single_party_state
-				}
-				coa_fascist_trigger = yes
+				has_law_or_variant = law_type:law_council_republic
 			}
 		}
 	}

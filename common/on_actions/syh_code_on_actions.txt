@@ -1,10 +1,10 @@
 ﻿on_game_started = {
 	on_actions = {
-		syh_init
+		on_game_started_syh_init
 	}
 }
 
-syh_init = {
+on_game_started_syh_init = {
 	effect = {
 		if = {
 			limit = {
@@ -12,7 +12,8 @@ syh_init = {
 			}
 			socialism_for_the_world = yes
 			create_soviet_bloc = yes
-			organise_german_states = yes
+			create_socialist_ngf = yes
+			create_socialist_sgf = yes
 			create_contrabolshevist_italy = yes
 			create_yugoslavian_federation = yes
 			create_romanian_soviet_republic = yes
@@ -21,8 +22,38 @@ syh_init = {
 			create_ukrainian_soviet_republic = yes
 			create_czech_soviet_republic = yes
 			create_slovak_soviet_republic = yes
-			organise_southern_balkan = yes
 			create_lithuanian_soviet_republic = yes
+			create_socialist_albania = yes
+			organise_southern_balkan = yes
+			create_pb_esu = yes
 		}
+	}
+}
+
+on_monthly_pulse_country = {
+	on_actions = {
+		on_monthly_pulse_country_puppet_management
+	}
+}
+
+on_monthly_pulse_country_puppet_management = {
+	random_events = {
+		88 = 0
+		10 = puppet_management.1
+		2 = puppet_management.2
+	}
+}
+
+on_yearly_pulse_state = {
+	on_actions = {
+		on_yearly_pulse_state_modifier_management
+	}
+}
+
+on_yearly_pulse_state_modifier_management = {
+	random_events = {
+		90 = 0
+		5 = modifier_management.1
+		5 = modifier_management.2
 	}
 }

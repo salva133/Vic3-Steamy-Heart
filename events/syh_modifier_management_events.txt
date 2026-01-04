@@ -1,0 +1,55 @@
+﻿namespace = modifier_management
+
+modifier_management.1 = {
+	type = state_event
+	hidden = yes
+
+	trigger = {
+		any_state = {
+			has_modifier = modifier_strong_communist_bias
+			owner = {
+				NOT = {
+					has_law_or_variant = law_type:law_council_republic
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_state = {
+			limit = {
+				owner = {
+					NOT = {
+						has_law_or_variant = law_type:law_council_republic
+					}
+				}
+			}
+			remove_modifier = modifier_strong_communist_bias
+		}
+	}
+}
+
+modifier_management.2 = {
+	type = state_event
+	hidden = yes
+
+	trigger = {
+		any_state = {
+			has_modifier = modifier_strong_fascist_bias
+			owner = {
+				coa_fascist_trigger = no
+			}
+		}
+	}
+
+	immediate = {
+		random_state = {
+			limit = {
+				owner = {
+					coa_fascist_trigger = no
+				}
+			}
+			remove_modifier = modifier_strong_fascist_bias
+		}
+	}
+}

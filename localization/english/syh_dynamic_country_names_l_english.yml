@@ -1,2 +1,8 @@
 ﻿l_english:
-  dyn_c_fascist_italy: "State of Italy"
+# General Variables
+  root_adj: "$ADJECTIVE$"
+  root_adj_soviet: "Soviet $ADJECTIVE$"
+
+# Relation-based Names
+  dyn_c_constituent_soviet_republic: "$ADJECTIVE$ SSR"
+  dyn_c_volkssektor: "$ADJECTIVE$ Volkssektor"

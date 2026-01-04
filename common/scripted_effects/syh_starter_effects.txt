@@ -10,30 +10,50 @@
 create_soviet_bloc = {
 	c:AUS ?= { set_up_soviet_gov = yes }
 	c:HUN ?= { set_up_soviet_gov = yes }
-	c:UBD ?= { set_up_soviet_gov = yes }
 	if = {
 		limit = { has_game_rule = create_ussr }
+		c:UBD ?= { set_up_soviet_gov = yes }
 		c:RUS ?= {
 			set_up_soviet_gov = yes
 			create_diplomatic_pact = {
 				country = c:NGF
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:NGF
+				value = 200
+			}
 			create_diplomatic_pact = {
 				country = c:SGF
 				type = constituent_republic
+			}
+			change_relations = {
+				country = c:SGF
+				value = 200
 			}
 			create_diplomatic_pact = {
 				country = c:AUS
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:AUS
+				value = 200
+			}
 			create_diplomatic_pact = {
 				country = c:HUN
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:HUN
+				value = 200
+			}
 			create_diplomatic_pact = {
 				country = c:UBD
 				type = constituent_republic
+			}
+			change_relations = {
+				country = c:UBD
+				value = 200
 			}
 			c:FIN ?= { make_independent = yes }
 			c:KZH ?= { set_up_soviet_gov = yes }
@@ -41,47 +61,78 @@ create_soviet_bloc = {
 				country = c:KZH
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:KZH
+				value = 200
+			}
 			c:OZH ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:OZH
 				type = constituent_republic
+			}
+			change_relations = {
+				country = c:OZH
+				value = 200
 			}
 			c:UZH ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:UZH
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:UZH
+				value = 200
+			}
 			c:KOK ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:KOK
 				type = constituent_republic
+			}
+			change_relations = {
+				country = c:KOK
+				value = 200
 			}
 			c:BUK ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:BUK
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:BUK
+				value = 200
+			}
 			c:KHI ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:KHI
 				type = constituent_republic
+			}
+			change_relations = {
+				country = c:KHI
+				value = 200
 			}
 			c:CIR ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:CIR
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:CIR
+				value = 200
+			}
 			c:CHC ?= { set_up_soviet_gov = yes }
 			create_diplomatic_pact = {
 				country = c:CHC
 				type = constituent_republic
 			}
+			change_relations = {
+				country = c:CHC
+				value = 200
+			}
 		}
 	}
 }
 
-organise_german_states = {
-	# NGF
+create_socialist_ngf = {
 	c:PRU ?= {
 		capital = { save_scope_as = capital_state }
 	}
@@ -108,7 +159,9 @@ organise_german_states = {
 		}
 		set_state_owner = c:NGF
 	}
-	# SGF
+}
+
+create_socialist_sgf = {
 	c:BAV ?= {
 		capital = { save_scope_as = capital_state }
 	}
@@ -136,33 +189,6 @@ organise_german_states = {
 			}
 		}
 		set_state_owner = c:SGF
-	}
-
-	# ESU PB
-	if = {
-		limit = { has_game_rule = create_esu }
-		c:NGF ?= {
-			create_power_bloc = {
-				name = pb_european_socialist_union
-				map_color = { 200 0 0 }
-				founding_date = 1836.1.1
-				identity = identity_ideological_union
-				principle = principle_ideological_truth_3
-
-				member = c:SGF
-				member = c:AUS
-				member = c:HUN
-				member = c:UBD
-				member = c:YUG
-				member = c:BYE
-				member = c:POL
-				member = c:UKR
-				member = c:BOH
-				member = c:SLV
-				member = c:ALB
-				member = c:LIT
-			}
-		}
 	}
 }
 
@@ -242,6 +268,10 @@ create_yugoslavian_federation = {
 		create_diplomatic_pact = {
 			country = c:BUL
 			type = constituent_republic
+		}
+		change_relations = {
+			country = c:BUL
+			value = 200
 		}
 	}
 }
@@ -446,32 +476,6 @@ create_slovak_soviet_republic = {
 	}
 }
 
-organise_southern_balkan = {
-	s:STATE_THESSALIA = {
-		every_scope_state = {
-			set_state_owner = c:GRE
-		}
-	}
-	s:STATE_MACEDONIA = {
-		every_scope_state = {
-			set_state_owner = c:GRE
-		}
-	}
-	s:STATE_ALBANIA = {
-		every_scope_state = {
-			save_scope_as = capital_state
-		}
-	}
-	create_country = {
-		tag = ALB
-		origin = c:YUG
-		state = scope:capital_state
-		on_created = {
-			set_up_soft_commie_gov = yes
-		}
-	}
-}
-
 create_lithuanian_soviet_republic = {
 	s:STATE_KAUNAS = {
 		every_scope_state = {
@@ -499,6 +503,224 @@ create_lithuanian_soviet_republic = {
 			create_diplomatic_pact = {
 				country = c:LIT
 				type = constituent_republic
+			}
+		}
+	}
+}
+
+create_socialist_albania = {
+	s:STATE_ALBANIA = {
+		every_scope_state = {
+			save_scope_as = capital_state
+		}
+	}
+	create_country = {
+		tag = ALB
+		origin = c:YUG
+		state = scope:capital_state
+		on_created = {
+			set_up_soft_commie_gov = yes
+		}
+	}
+}
+
+organise_southern_balkan = {
+	s:STATE_THESSALIA = {
+		every_scope_state = {
+			set_state_owner = c:GRE
+		}
+	}
+	s:STATE_MACEDONIA = {
+		every_scope_state = {
+			set_state_owner = c:GRE
+		}
+	}
+}
+
+create_pb_esu = {
+	# ESU PB
+	if = {
+		limit = { has_game_rule = create_esu }
+		c:NGF ?= {
+			create_power_bloc = {
+				name = pb_european_socialist_union
+				map_color = { 89 39 32 }
+				founding_date = 1836.1.1
+				identity = identity_ideological_union
+				principle = principle_ideological_truth_3
+				principle = principle_market_unification_3
+				principle = principle_transport_3
+				principle = principle_freedom_of_movement_3
+			}
+			power_bloc ?= {
+				add_cohesion_percent = 100
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:AUS ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:AUS
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:AUS
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:HUN ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:HUN
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:HUN
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:SGF ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:SGF
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:SGF
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:UBD ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:UBD
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:UBD
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:YUG ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:YUG
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:YUG
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:POL ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:POL
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:POL
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:BOH ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:BOH
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:BOH
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:SLV ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:SLV
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:SLV
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:LIT ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:LIT
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:LIT
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						c:ROM ?= { is_subject_of = c:NGF }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ROM
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:ROM
+					value = 200
+				}
+			}
+		}
+		c:YUG ?= {
+			if = {
+				limit = {
+					NOT = {
+						c:ALB ?= { is_subject_of = c:YUG }
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ALB
+					type = constituent_republic
+				}
+				change_relations = {
+					country = c:ALB
+					value = 200
+				}
 			}
 		}
 	}
