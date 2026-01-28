@@ -1,0 +1,59 @@
+﻿name: Create Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  create-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from metadata.json
+        id: get-version
+        run: |
+          if [[ ! -f .metadata/metadata.json ]]; then
+            echo "Error: .metadata/metadata.json not found"
+            exit 1
+          fi
+
+          VERSION=$(jq -r '.version' .metadata/metadata.json)
+
+          if [[ -z "$VERSION" || "$VERSION" == "null" ]]; then
+            echo "Error: .version field missing or empty in metadata.json"
+            exit 1
+          fi
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "→ Detected version: $VERSION"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name:        "${{ steps.get-version.outputs.version }}"
+          name:            "${{ steps.get-version.outputs.version }}"
+          body: |
+            Automated release **${{ steps.get-version.outputs.version }}**
+
+            Merged into `${{ github.event.pull_request.base.ref || github.ref_name }}`
+            via ${{ github.event_name == 'pull_request' && format('PR #{0}', github.event.pull_request.number) || 'manual workflow_dispatch' }}
+
+            ${{ github.event.pull_request.body || 'Manually triggered release' }}
+
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
