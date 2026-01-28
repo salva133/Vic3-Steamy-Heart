@@ -1,0 +1,64 @@
+﻿name: Bump patch number on substantive changes
+
+on:
+  push:
+    branches-ignore: ["master"]
+    paths:
+      - 'common/**'
+      - 'events/**'
+      - 'gfx/**'
+      - 'gui/**'
+      - 'localization/**'
+      - 'sfx/**'
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump patch number in metadata.json
+        run: |
+          set -euo pipefail
+
+          FILE=".metadata/metadata.json"
+          if [[ ! -f "$FILE" ]]; then
+            echo "❌ metadata.json nicht gefunden - Abbruch"
+            exit 1
+          fi
+
+          OLD_VERSION=$(jq -r '.version' "$FILE")
+          if [[ -z "$OLD_VERSION" || "$OLD_VERSION" == "null" ]]; then
+            echo "❌ .version nicht gefunden oder null"
+            exit 1
+          fi
+
+          if [[ ! $OLD_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "❌ Ungültiges Format (erwartet x.y.patch): $OLD_VERSION"
+            exit 1
+          fi
+
+          IFS='.' read -r major minor patch <<< "$OLD_VERSION"
+          new_patch=$((patch + 1))
+          NEW_VERSION="$major.$minor.$new_patch"
+
+          jq --arg nv "$NEW_VERSION" '.version = $nv' "$FILE" > tmp.json && mv tmp.json "$FILE"
+
+          echo "Bump erfolgreich: $OLD_VERSION → $NEW_VERSION"
+
+      - name: Bot Commit & Push bump
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .metadata/metadata.json
+
+          git diff --staged --quiet && echo "Keine Versionsänderung nötig" && exit 0
+
+          git commit -m "ci: bump patch number $NEW_VERSION"
+          git push
