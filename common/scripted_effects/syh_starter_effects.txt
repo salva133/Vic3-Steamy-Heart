@@ -8,13 +8,13 @@
 }
 
 create_soviet_bloc = {
-	c:AUS ?= { set_up_soviet_gov = yes }
-	c:HUN ?= { set_up_soviet_gov = yes }
+	c:AUS ?= { set_up_hard_commie_gov = yes }
+	c:HUN ?= { set_up_hard_commie_gov = yes }
 	if = {
 		limit = { has_game_rule = create_ussr }
-		c:UBD ?= { set_up_soviet_gov = yes }
+		c:UBD ?= { set_up_hard_commie_gov = yes }
 		c:RUS ?= {
-			set_up_soviet_gov = yes
+			set_up_hard_commie_gov = yes
 			create_diplomatic_pact = {
 				country = c:NGF
 				type = constituent_republic
@@ -56,7 +56,7 @@ create_soviet_bloc = {
 				value = 200
 			}
 			c:FIN ?= { make_independent = yes }
-			c:KZH ?= { set_up_soviet_gov = yes }
+			c:KZH ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:KZH
 				type = constituent_republic
@@ -65,7 +65,7 @@ create_soviet_bloc = {
 				country = c:KZH
 				value = 200
 			}
-			c:OZH ?= { set_up_soviet_gov = yes }
+			c:OZH ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:OZH
 				type = constituent_republic
@@ -74,7 +74,7 @@ create_soviet_bloc = {
 				country = c:OZH
 				value = 200
 			}
-			c:UZH ?= { set_up_soviet_gov = yes }
+			c:UZH ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:UZH
 				type = constituent_republic
@@ -83,7 +83,7 @@ create_soviet_bloc = {
 				country = c:UZH
 				value = 200
 			}
-			c:KOK ?= { set_up_soviet_gov = yes }
+			c:KOK ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:KOK
 				type = constituent_republic
@@ -92,7 +92,7 @@ create_soviet_bloc = {
 				country = c:KOK
 				value = 200
 			}
-			c:BUK ?= { set_up_soviet_gov = yes }
+			c:BUK ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:BUK
 				type = constituent_republic
@@ -101,7 +101,7 @@ create_soviet_bloc = {
 				country = c:BUK
 				value = 200
 			}
-			c:KHI ?= { set_up_soviet_gov = yes }
+			c:KHI ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:KHI
 				type = constituent_republic
@@ -110,7 +110,7 @@ create_soviet_bloc = {
 				country = c:KHI
 				value = 200
 			}
-			c:CIR ?= { set_up_soviet_gov = yes }
+			c:CIR ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:CIR
 				type = constituent_republic
@@ -119,7 +119,7 @@ create_soviet_bloc = {
 				country = c:CIR
 				value = 200
 			}
-			c:CHC ?= { set_up_soviet_gov = yes }
+			c:CHC ?= { set_up_hard_commie_gov = yes }
 			create_diplomatic_pact = {
 				country = c:CHC
 				type = constituent_republic
@@ -141,7 +141,7 @@ create_socialist_ngf = {
 		origin = c:PRU
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov = yes
+			set_up_hard_commie_gov = yes
 		}
 	}
 	random_country = {
@@ -170,7 +170,7 @@ create_socialist_sgf = {
 		origin = c:BAV
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov = yes
+			set_up_hard_commie_gov = yes
 		}
 	}
 	random_country = {
@@ -285,7 +285,7 @@ create_romanian_soviet_republic = {
 		origin = c:WAL
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov = yes
+			set_up_hard_commie_gov = yes
 		}
 	}
 	every_state = {
@@ -321,7 +321,7 @@ create_white_russian_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
@@ -353,7 +353,7 @@ create_polish_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
@@ -385,7 +385,7 @@ create_ukrainian_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
@@ -423,7 +423,7 @@ create_czech_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
@@ -455,7 +455,7 @@ create_slovak_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
@@ -487,7 +487,7 @@ create_lithuanian_soviet_republic = {
 		origin = c:RUS
 		state = scope:capital_state
 		on_created = {
-			set_up_soviet_gov  = yes
+			set_up_hard_commie_gov  = yes
 		}
 	}
 	every_state = {
