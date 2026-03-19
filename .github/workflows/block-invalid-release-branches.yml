@@ -8,4 +8,4 @@ on:
 
 jobs:
   block-invalid-release-pr:
-    uses: salva133/My-Workflows/.github/workflows/block-invalid-release-branches.yml@master
+    uses: salva133/My-Workflows/.github/workflows/block-invalid-release-branches.yml@latest

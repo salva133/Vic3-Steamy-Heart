@@ -6,4 +6,4 @@ on:
       - master
 jobs:
   bump-build-number:
-    uses: salva133/My-Workflows/.github/workflows/bump-build-number.yml@master
+    uses: salva133/My-Workflows/.github/workflows/bump-build-number.yml@latest
