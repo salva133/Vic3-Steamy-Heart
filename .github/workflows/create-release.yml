@@ -6,6 +6,8 @@ on:
     branches:
       - master
 
+  workflow_dispatch:
+
 jobs:
   create-release:
     if: github.event.pull_request.merged == true
