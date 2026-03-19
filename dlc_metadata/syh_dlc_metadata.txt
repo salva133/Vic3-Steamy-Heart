@@ -1,0 +1,7 @@
+﻿modsyh = {
+	name = "Steamy Heart"
+	steam_id = ""
+	type = minor
+	priority = 0
+	theme_provider = no
+}
