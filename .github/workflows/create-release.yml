@@ -8,4 +8,9 @@ on:
 
 jobs:
   create-release:
-    uses: salva133/My-Workflows/.github/workflows/create-release.yml@master
+    if: github.event.pull_request.merged == true
+    uses: salva133/My-Workflows/.github/workflows/create-release.yml@91a31c01990c581dc0f86b57f08374764feb1702
+    with:
+      branch_name: ${{ github.event.pull_request.head.ref }}
+      pr_number: ${{ github.event.pull_request.number }}
+      pr_body: ${{ github.event.pull_request.body }}
