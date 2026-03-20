@@ -11,7 +11,7 @@ on:
 jobs:
   create-release:
     if: github.event.pull_request.merged == true
-    uses: salva133/My-Workflows/.github/workflows/create-release.yml@a7b34cd4067123ab5623d7caadbe45f7cf8e8fa4
+    uses: salva133/My-Workflows/.github/workflows/create-release.yml@latest
     with:
       branch_name: ${{ github.event.pull_request.head.ref }}
       pr_number: ${{ github.event.pull_request.number }}
