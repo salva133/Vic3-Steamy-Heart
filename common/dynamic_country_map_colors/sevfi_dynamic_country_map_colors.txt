@@ -1,0 +1,8 @@
+﻿italian_state = {
+	color = hsv360{ 98 35 30 }
+
+	possible = {
+		c:ITA ?= this
+		country_has_ducist_government = yes
+	}
+}

@@ -1,0 +1,10 @@
+﻿l_english:
+  je_bolshevik_menace: "The Bolshevik Menace"
+  je_bolshevik_menace_reason: "Central Europe has fallen victim to #red Communism#!! As the last free nation, we must do everything we can to contain the Bolsheviks, otherwise our society as we know it will cease to exist!"
+  je_bolshevik_menace_status: "#grey AVE IN CORONA VICTORIS DVX!"
+  je_bolshevik_menace_lobby: "$je_bolshevik_menace_reason$\n\n$je_bolshevik_menace_status$"
+
+  je_bringing_the_world_revolution: "Bringing the World Revolution"
+  je_bringing_the_world_revolution_reason: "With the fall of the last #gold Monarchist-Imperialist Stronghold in Central Europe#!, we have cemented our power. The continent's greatest industries and thinkers listen to us. As brothers and sisters, friends and comrades, we will bring true socialism to the world and create an endless era of peace and prosperity!"
+  je_bringing_the_world_revolution_status: "#red MIT DER PARTEI, MIT DEM VOLK - ZUM ENDGÜLTIGEN SIEG DER ARBEITERKLASSE!"
+  je_bringing_the_world_revolution_lobby: "$je_bringing_the_world_revolution_reason$\n\n$je_bringing_the_world_revolution_status$"

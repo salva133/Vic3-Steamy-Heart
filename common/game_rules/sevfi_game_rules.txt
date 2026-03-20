@@ -1,0 +1,9 @@
+﻿sevfi_content = {
+	default = create_esu
+
+	no_sevfi_content = {}
+
+	create_ussr = {}
+
+	create_esu = {}
+}

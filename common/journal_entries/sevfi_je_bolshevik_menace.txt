@@ -8,17 +8,17 @@
 
 	is_shown_in_lobby = {
 		country_is_in_europe = yes
-		country_has_fascist_government = yes
+		country_has_ducist_government = yes
 	}
 	
 	is_shown_when_inactive = {
 		country_is_in_europe = yes
-		country_has_fascist_government = yes
+		country_has_ducist_government = yes
 	}
 	
 	possible = {
 		country_is_in_europe = yes
-		country_has_fascist_government = yes
+		country_has_ducist_government = yes
 	}
 
 	immediate = {

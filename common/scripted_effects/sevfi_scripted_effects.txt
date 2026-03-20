@@ -1,0 +1,186 @@
+﻿set_up_socialist_gov = {
+	give_additional_tech = yes
+	activate_law = law_type:law_council_republic
+	activate_law = law_type:law_single_party_state
+	activate_law = law_type:law_multicultural
+	activate_law = law_type:law_mass_conscription
+	activate_law = law_type:law_secret_police
+	activate_law = law_type:law_protectionism
+	activate_law = law_type:law_militarized_police
+	activate_law = law_type:law_outlawed_dissent
+	activate_law = law_type:law_womens_suffrage
+	activate_law = law_type:law_no_migration_controls
+	activate_law = law_type:law_slavery_banned
+	activate_law = law_type:law_corporatized_unions
+	make_all_politicians_communist = yes
+	give_all_states_strong_communist_bias = yes
+}
+
+set_up_hard_commie_gov = {
+	set_up_socialist_gov = yes
+	activate_law = law_type:law_state_atheism
+	activate_law = law_type:law_command_economy
+	activate_law = law_type:law_collectivized_agriculture
+}
+
+set_up_soft_commie_gov = {
+	set_up_socialist_gov = yes
+	activate_law = law_type:law_total_separation
+	activate_law = law_type:law_cooperative_ownership
+	activate_law = law_type:law_homesteading
+}
+
+give_additional_tech = {
+	add_technology_researched = political_agitation
+	add_technology_researched = film
+	add_technology_researched = mass_propaganda
+	add_technology_researched = central_planning
+	add_technology_researched = mass_surveillance
+}
+
+set_up_fascist_gov = {
+	give_additional_tech = yes
+	activate_law = law_type:law_corporate_state
+	activate_law = law_type:law_autocracy
+	activate_law = law_type:law_ethnostate
+	activate_law = law_type:law_total_separation
+	activate_law = law_type:law_appointed_bureaucrats
+	activate_law = law_type:law_mass_conscription
+	activate_law = law_type:law_secret_police
+	activate_law = law_type:law_interventionism
+	activate_law = law_type:law_protectionism
+	activate_law = law_type:law_proportional_taxation
+	activate_law = law_type:law_latifundias
+	activate_law = law_type:law_militarized_police
+	activate_law = law_type:law_public_schools
+	activate_law = law_type:law_public_health_insurance
+	activate_law = law_type:law_outlawed_dissent
+	activate_law = law_type:law_regulatory_bodies
+	activate_law = law_type:law_compulsory_primary_school
+	activate_law = law_type:law_women_in_the_workplace
+	activate_law = law_type:law_wage_subsidies
+	activate_law = law_type:law_corporatized_unions
+
+	ig:ig_petty_bourgeoisie ?= {
+		leader ?= {
+			set_character_as_ruler = yes
+		}
+	}
+
+	make_all_politicians_fascist = yes
+	give_all_states_strong_fascist_bias = yes
+}
+
+ITA_afterburn = {
+	c:ITA ?= {
+		every_scope_state = {
+			create_building = {
+				building = building_construction_sector
+				level = 10
+			}
+			if = {
+				limit = {
+					is_capital = no
+				}
+				create_building = {
+					building = building_government_administration
+					level = 2
+				}
+			}
+		}
+		capital = {
+			create_building = {
+				building = building_government_administration
+				level = 20
+			}
+		}
+		create_character = {
+			is_general = yes
+		}
+		create_character = {
+			is_general = yes
+		}
+		create_character = {
+			is_admiral = yes
+		}
+	}
+}
+
+give_all_states_strong_communist_bias = {
+	every_scope_state = {
+		limit = {
+			NOT = { has_modifier = modifier_strong_communist_bias }
+		}
+		add_modifier = {
+			name = modifier_strong_communist_bias
+			years = 100
+			is_decaying = yes
+		}
+	}
+}
+
+make_all_politicians_communist = {
+	every_scope_politician = {
+		limit = {
+			NOT = { has_ideology = ideology:ideology_communist }
+		}
+		set_ideology = ideology:ideology_communist
+	}
+}
+
+give_all_states_strong_fascist_bias = {
+	every_scope_state = {
+		limit = {
+			NOT = { has_modifier = modifier_strong_fascist_bias }
+		}
+		add_modifier = {
+			name = modifier_strong_fascist_bias
+			years = 100
+			is_decaying = yes
+		}
+	}
+}
+
+make_all_politicians_fascist = {
+	every_scope_politician = {
+		limit = {
+			NOT = { has_ideology = ideology:ideology_fascist }
+		}
+		set_ideology = ideology:ideology_fascist
+	}
+}
+
+TRY_INJECT:remove_subject_diplomatic_pact = {
+	if = {
+		limit = {
+			this = {
+				has_diplomatic_pact = {
+					who = root
+					type = constituent_republic
+				}
+			}
+		}
+		this = {
+			remove_diplomatic_pact = {
+				country = root
+				type = constituent_republic
+			}
+		}
+	}
+}
+
+make_pops_literate_40_percent = {
+	every_scope_pop = {
+		limit = { literacy_rate < 0.4 }
+		set_pop_literacy = {
+			literacy_rate = 0.4
+		}
+	}
+}
+
+incorporate_every_scope_state = {
+	if = {
+		limit = { is_incorporated = no }
+		set_state_type = incorporated
+	}
+}

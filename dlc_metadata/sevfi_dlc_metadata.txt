@@ -1,5 +1,5 @@
-﻿modsyh = {
-	name = "Steamy Heart"
+﻿modsevfi = {
+	name = modsevfi
 	steam_id = ""
 	type = minor
 	priority = 0
