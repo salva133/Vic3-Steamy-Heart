@@ -73,27 +73,7 @@ set_up_fascist_gov = {
 
 ITA_afterburn = {
 	c:ITA ?= {
-		every_scope_state = {
-			create_building = {
-				building = building_construction_sector
-				level = 10
-			}
-			if = {
-				limit = {
-					is_capital = no
-				}
-				create_building = {
-					building = building_government_administration
-					level = 2
-				}
-			}
-		}
-		capital = {
-			create_building = {
-				building = building_government_administration
-				level = 20
-			}
-		}
+		create_building_and_government_buildings = yes
 		create_character = {
 			is_general = yes
 		}
@@ -102,6 +82,30 @@ ITA_afterburn = {
 		}
 		create_character = {
 			is_admiral = yes
+		}
+	}
+}
+
+create_building_and_government_buildings = {
+	every_scope_state = {
+		create_building = {
+			building = building_construction_sector
+			level = 10
+		}
+		if = {
+			limit = {
+				is_capital = no
+			}
+			create_building = {
+				building = building_government_administration
+				level = 2
+			}
+		}
+	}
+	capital = {
+		create_building = {
+			building = building_government_administration
+			level = 20
 		}
 	}
 }
