@@ -1,0 +1,118 @@
+[h1]Starting Scenario: Socialist Europe vs Fascist Italy (Alpha)[/h1]
+[i]Disclaimer: Not yet fully balanced.[/i]
+[h2]Overview[/h2]
+This mod provides a fully scripted alternate-history starting scenario for
+[i]Victoria 3[/i]. In 1836, Central and Eastern Europe have already undergone
+successful socialist revolutions. The result is a bipolar continent: a powerful
+socialist bloc (either the Union of Soviet Socialist Republics or the European
+Socialist Union) facing a fascist Italian state as its primary ideological and
+military counterweight.
+
+The mod transforms the default 1836 setup into a Cold-War-style confrontation
+between radical leftism and fascism, complete with new subject mechanics,
+dynamic country naming, custom government types, journal entries, and ongoing
+event chains.
+
+[h2]Features[/h2]
+[h3]Core Gameplay Changes[/h3]
+[list]
+[*][b]New Subject Type: Constituent Republic[/b]  
+[/list]
+  A specialized diplomatic pact with high integration. Subjects retain limited
+autonomy but contribute significantly to the overlord’s economy and military.
+
+[list]
+[*][b]Dynamic Country Names[/b]  
+  [*]Soviet-style republics automatically rename to “X SSR” when under Russian
+(or equivalent) socialist overlordship.  
+  [*]German socialist subjects under North/South German overlords receive “X
+Volkssektor” naming.
+[/list]
+
+[list]
+[*][b]Custom Government Type[/b]  
+  [*][b]Ducist Regime[/b] for Italy (titles: Duce / Ducessa).  
+  [*]Automatically applied when Italy adopts a fascist corporate-state
+government (if it works, this government type assignment system is screwing
+with me since forever).
+[/list]
+
+[h3]Power Blocs & Federations[/h3]
+[list]
+[*][b]European Socialist Union (ESU)[/b] – optional ideological super-bloc led
+by North German Federation.  
+[*][b]Union of Socialist States[/b] – fallback bloc for USSR-style playthroughs.
+[/list]
+
+[h3]Journal Entries[/h3]
+[list]
+[*][b]The Bolshevik Menace[/b] (Fascist Italy & other right-wing European
+nations) – tracks the spread of socialism and urges containment.  
+[*][b]Bringing the World Revolution[/b] (Socialist nations) – celebrates
+continental dominance and pushes for global socialist expansion.
+[/list]
+
+[h3]Events & Modifiers[/h3]
+[list]
+[*][b]Puppet Management Events[/b]  
+[/list]
+  Overlords can pressure socialist puppets to align fully with council-republic
+laws. Puppets may submit, resist (gaining claims on the overlord), or break
+free if ideological alignment fails.
+[list]
+[*][b]Strong Ideological Bias Modifiers[/b]  
+[/list]
+  Permanent (decaying) state-level modifiers that massively boost communist or
+fascist political support, ensuring the starting ideological setup remains
+stable.
+
+[h3]Game Rules (selectable at game start)[/h3]
+[list]
+[*][b]Create the USSR[/b] – Russia becomes the center of a classic Soviet
+federation with numerous Constituent Republics (Poland, Ukraine, Baltics,
+Central Asia, etc.).
+[*][b]Create the ESU[/b] – North German Federation leads a pan-European
+socialist union.
+[*][b]Vanilla[/b] – disables all mod content for a standard 1836 start.
+[/list]
+
+[h2]New Countries & Setup[/h2]
+[list]
+[*]Socialist states automatically formed and governed
+    [*]NGF
+    [*]SGF
+    [*]Austria
+    [*]Hungary
+    [*]Romania
+    [*]Poland
+    [*]Ukraine
+    [*]Bohemia
+    [*]Slovakia
+    [*]Lithuania
+    [*]Yugoslavia
+    [*]Bulgaria
+    [*]Albania
+    [*]and several Central Asian republics.  
+[/list]
+
+[list]
+[*]Fascist Italy (Ducist Regime) formed from the Italian cultural sphere,
+positioned as [b]the[/b] anti-bolshevik power in Europe.
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Not compatible with other major overhaul mods that alter country formation,
+laws, or starting setups inside of europe.
+[/list]
+
+[h2]Credits & Legal[/h2]
+Created for the Victoria 3 community. All original game assets remain the
+property of Paradox Interactive. This mod is provided free of charge for
+non-commercial use.
+
+[hr]
+
+[b]Enjoy the new ideological struggle![/b]  
+For feedback, bug reports, or suggestions, please contact either me or your
+next Volkskommissar.
