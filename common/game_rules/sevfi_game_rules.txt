@@ -1,5 +1,5 @@
 ﻿sevfi_content = {
-	default = no_sevfi_content
+	default = create_esu
 
 	no_sevfi_content = {}
 

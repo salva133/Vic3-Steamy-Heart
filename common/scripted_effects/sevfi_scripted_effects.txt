@@ -1,5 +1,5 @@
 ﻿set_up_socialist_gov = {
-	give_political_agitation = yes
+	give_additional_tech = yes
 	activate_law = law_type:law_council_republic
 	activate_law = law_type:law_single_party_state
 	activate_law = law_type:law_multicultural
@@ -30,127 +30,27 @@ set_up_soft_commie_gov = {
 	activate_law = law_type:law_homesteading
 }
 
-give_socialism = {
-	if = {
-		limit = {
-			NOT = { has_technology_researched = mass_communication }
-		}
-		add_technology_researched = mass_communication
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = democracy }
-		}
-		add_technology_researched = democracy
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = egalitarianism }
-		}
-		add_technology_researched = egalitarianism
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = labor_movement }
-		}
-		add_technology_researched = labor_movement
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = rationalism }
-		}
-		add_technology_researched = rationalism
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = academia }
-		}
-		add_technology_researched = academia
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = empiricism }
-		}
-		add_technology_researched = empiricism
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = dialectics }
-		}
-		add_technology_researched = dialectics
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = socialism }
-		}
-		add_technology_researched = socialism
-	}
-}
-
-give_corporatism = {
-	if = {
-		limit = {
-			NOT = { has_technology_researched = urbanization }
-		}
-		add_technology_researched = urbanization
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = tech_bureaucracy }
-		}
-		add_technology_researched = tech_bureaucracy
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = international_relations }
-		}
-		add_technology_researched = international_relations
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = nationalism }
-		}
-		add_technology_researched = nationalism
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = corporatism }
-		}
-		add_technology_researched = corporatism
-	}
-}
-
-give_political_agitation = {
-	give_socialism = yes
-	give_corporatism = yes
-	make_pops_literate_40_percent = yes # Pops need to be able to comprehend this
-	if = {
-		limit = {
-			NOT = { has_technology_researched = anarchism }
-		}
-		add_technology_researched = anarchism
-	}
-	if = {
-		limit = {
-			NOT = { has_technology_researched = political_agitation }
-		}
-		add_technology_researched = political_agitation
-	}
+give_additional_tech = {
+	add_technology_researched = political_agitation
+	add_technology_researched = film
+	add_technology_researched = mass_propaganda
+	add_technology_researched = central_planning
+	add_technology_researched = mass_surveillance
 }
 
 set_up_fascist_gov = {
-	give_political_agitation = yes
-	give_central_archives = yes
+	give_additional_tech = yes
 	activate_law = law_type:law_corporate_state
-	activate_law = law_type:law_single_party_state
+	activate_law = law_type:law_autocracy
 	activate_law = law_type:law_ethnostate
 	activate_law = law_type:law_total_separation
 	activate_law = law_type:law_appointed_bureaucrats
+	activate_law = law_type:law_mass_conscription
 	activate_law = law_type:law_secret_police
 	activate_law = law_type:law_interventionism
 	activate_law = law_type:law_protectionism
-	activate_law = law_type:law_per_capita_based_taxation
-	activate_law = law_type:law_collectivized_agriculture
+	activate_law = law_type:law_proportional_taxation
+	activate_law = law_type:law_latifundias
 	activate_law = law_type:law_militarized_police
 	activate_law = law_type:law_public_schools
 	activate_law = law_type:law_public_health_insurance
@@ -161,43 +61,48 @@ set_up_fascist_gov = {
 	activate_law = law_type:law_wage_subsidies
 	activate_law = law_type:law_corporatized_unions
 
+	ig:ig_petty_bourgeoisie ?= {
+		leader ?= {
+			set_character_as_ruler = yes
+		}
+	}
+
 	make_all_politicians_fascist = yes
 	give_all_states_strong_fascist_bias = yes
 }
 
-give_central_archives = {
-	if = {
-		limit = { NOT = { has_technology_researched = army_reserves } }
-		add_technology_researched = army_reserves
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = artillery } }
-		add_technology_researched = artillery
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = line_infantry } }
-		add_technology_researched = line_infantry
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = napoleonic_warfare } }
-		add_technology_researched = napoleonic_warfare
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = logistics } }
-		add_technology_researched = logistics
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = enlistment_offices } }
-		add_technology_researched = enlistment_offices
-	}
-	activate_law = law_type:law_mass_conscription
-	if = {
-		limit = { NOT = { has_technology_researched = centralization } }
-		add_technology_researched = centralization
-	}
-	if = {
-		limit = { NOT = { has_technology_researched = central_archives } }
-		add_technology_researched = central_archives
+ITA_afterburn = {
+	c:ITA ?= {
+		every_scope_state = {
+			create_building = {
+				building = building_construction_sector
+				level = 10
+			}
+			if = {
+				limit = {
+					is_capital = no
+				}
+				create_building = {
+					building = building_government_administration
+					level = 2
+				}
+			}
+		}
+		capital = {
+			create_building = {
+				building = building_government_administration
+				level = 20
+			}
+		}
+		create_character = {
+			is_general = yes
+		}
+		create_character = {
+			is_general = yes
+		}
+		create_character = {
+			is_admiral = yes
+		}
 	}
 }
 
@@ -270,5 +175,12 @@ make_pops_literate_40_percent = {
 		set_pop_literacy = {
 			literacy_rate = 0.4
 		}
+	}
+}
+
+incorporate_every_scope_state = {
+	if = {
+		limit = { is_incorporated = no }
+		set_state_type = incorporated
 	}
 }

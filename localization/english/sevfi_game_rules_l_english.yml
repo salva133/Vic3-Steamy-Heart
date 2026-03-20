@@ -1,8 +1,8 @@
 ﻿l_english:
-  rule_sevfi_content: "#red SS: Socialist Europe vs Fascist Italy#! Content"
+  rule_sevfi_content: "$modsevfi$ Content"
   setting_create_ussr: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_create_ussr_desc #high Create the USSR#!#!#!"
-  setting_create_ussr_desc: "The #red USSR#! and its \"constituent republics\" gets created.\nFascist Italy gets created too."
+  setting_create_ussr_desc: "The #red USSR#! and its \"constituent republics\" gets created.\n#grey Fascist Italy#! gets created too."
   setting_create_esu: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_create_esu_desc #high Create the ESU#!#!#!"
-  setting_create_esu_desc: "The #red European Socialist Union#! gets set up.\nFascist Italy gets created too."
+  setting_create_esu_desc: "The #red European Socialist Union#! gets set up.\n#grey Fascist Italy#! gets created too."
   setting_no_sevfi_content: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_no_sevfi_content_desc #high Vanilla#!#!#!"
   setting_no_sevfi_content_desc: "Vanilla content, no fancy shit..."

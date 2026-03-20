@@ -1,5 +1,5 @@
 ﻿modsevfi = {
-	name = "Starting Scenario: Socialist Europe vs Fascist Italy"
+	name = modsevfi
 	steam_id = ""
 	type = minor
 	priority = 0

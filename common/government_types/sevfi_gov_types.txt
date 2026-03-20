@@ -5,8 +5,7 @@
 	female_ruler = "RULER_TITLE_DUCESSA"
 
 	possible = {
-		c:ITA ?= this
-		country_has_fascist_government = yes
+		country_has_ducist_government = yes
 	}
 
 	on_government_type_change = {
