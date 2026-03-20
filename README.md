@@ -1,2 +1,2 @@
-# Steamy Heart
-The World of Atomic Heart in the victorian universe.
+# Starting Scenario: Socialist Europe vs Fascist Italy
+New Game Rule: Toggle if either the Soviet Union or the European Socialist Union exists at the start. Either way, this will unify Italy to the fascist Italian State.

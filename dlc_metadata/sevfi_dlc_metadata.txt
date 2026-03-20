@@ -1,0 +1,7 @@
+﻿modsevfi = {
+	name = "Starting Scenario: Socialist Europe vs Fascist Italy"
+	steam_id = ""
+	type = minor
+	priority = 0
+	theme_provider = no
+}
