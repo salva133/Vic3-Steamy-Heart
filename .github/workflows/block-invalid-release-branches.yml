@@ -2,12 +2,12 @@
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
     branches:
       - master
 
 jobs:
   block-invalid-release-pr:
+    if: github.event.action == 'ready_for_review' || (github.event.action == 'synchronize' && github.event.pull_request.draft == false)
     uses: salva133/My-Workflows/.github/workflows/block-invalid-release-branches.yml@f3bafa6488ba6ea41089f2beb0ced938b16e4219
     with:
       head_ref: ${{ github.head_ref }}
