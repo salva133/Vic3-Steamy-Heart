@@ -103,7 +103,9 @@ puppet_management.2 = {
 		}
 		random_scope_state = {
 			limit = {
-				is_adjacent_to_country = root.overlord
+				owner = {
+					is_adjacent_to_country = root.overlord
+				}
 			}
 			add_claim = root.overlord
 		}

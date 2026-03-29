@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 	gov_ducist_regime: "Ducist Regime"
 	gov_ducist_regime_desc: "The state is in the strong, guiding hands of the $RULER_TITLE_DUCE$ (or the $RULER_TITLE_DUCESSA$).\nEverything in the State.\n Nothing outside the State. Nothing against the State.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
 

@@ -394,8 +394,10 @@ create_contrabolshevist_italy = {
 			is_homeland_of_country_cultures = c:ITA
 		}
 		if = {
-			limit = { owner = { is_player = yes } }
-			play_as = c:ITA
+			limit = {
+				owner = { is_player = yes }
+			}
+			owner = { play_as = c:ITA }
 		}
 		set_state_owner = c:ITA
 		incorporate_every_scope_state = yes
@@ -423,8 +425,10 @@ create_yugoslavian_federation = {
 			is_homeland_of_country_cultures = c:YUG
 		}
 		if = {
-			limit = { owner = { is_player = yes } }
-			play_as = c:YUG
+			limit = {
+				owner = { is_player = yes }
+			}
+			owner = { play_as = c:YUG }
 		}
 		set_state_owner = c:YUG
 		incorporate_every_scope_state = yes
@@ -448,8 +452,10 @@ create_yugoslavian_federation = {
 			is_homeland_of_country_cultures = c:BUL
 		}
 		if = {
-			limit = { owner = { is_player = yes } }
-			play_as = c:BUL
+			limit = {
+				owner = { is_player = yes }
+			}
+			owner = { play_as = c:BUL }
 		}
 		set_state_owner = c:BUL
 		incorporate_every_scope_state = yes
@@ -488,8 +494,10 @@ create_romanian_soviet_republic = {
 			is_homeland_of_country_cultures = c:ROM
 		}
 		if = {
-			limit = { owner = { is_player = yes } }
-			play_as = c:ROM
+			limit = {
+				owner = { is_player = yes }
+			}
+			owner = { play_as = c:ROM }
 		}
 		set_state_owner = c:ROM
 		incorporate_every_scope_state = yes
