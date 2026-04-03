@@ -79,7 +79,7 @@ puppet_management.2 = {
 		default_option = yes
 
 		activate_law = law_type:law_council_republic
-		overlord = { 
+		overlord = {
 			regime_change = scope:puppet
 			hidden_effect = {
 				create_diplomatic_pact = {

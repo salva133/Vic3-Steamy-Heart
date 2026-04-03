@@ -12,7 +12,7 @@ state_is_in_europe = {
 			region ?= sr:region_france
 			region ?= sr:region_occitania
 			region ?= sr:region_rhine
-			region ?= sr:region_italy	
+			region ?= sr:region_italy
 			region ?= sr:region_poland
 			region ?= sr:region_danubia
 			region ?= sr:region_balkans
@@ -54,9 +54,9 @@ state_is_in_south_america = {
 		text = state_is_in_south_america_desc
 		subject = this
 		OR = {
-			region ?= sr:region_brazil	
+			region ?= sr:region_brazil
 			region ?= sr:region_la_plata
-			region ?= sr:region_andes	
+			region ?= sr:region_andes
 			region ?= sr:region_gran_colombia
 		}
 	}
@@ -86,7 +86,7 @@ state_is_in_africa = {
 			region ?= sr:region_niger
 			region ?= sr:region_congo
 			region ?= sr:region_southern_africa
-			region ?= sr:region_zanj		
+			region ?= sr:region_zanj
 		}
 	}
 }

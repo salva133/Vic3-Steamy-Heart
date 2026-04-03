@@ -356,7 +356,7 @@ create_socialist_sgf = {
 		limit = {
 			is_player = yes
 			NOT = { c:AUS ?= this }
-			country_has_primary_culture = cu:south_german		
+			country_has_primary_culture = cu:south_german
 		}
 		play_as = c:SGF
 	}

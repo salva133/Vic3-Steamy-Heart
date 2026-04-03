@@ -16,22 +16,22 @@ event chains.
 [h2]Features[/h2]
 [h3]Core Gameplay Changes[/h3]
 [list]
-[*][b]New Subject Type: Constituent Republic[/b]  
+[*][b]New Subject Type: Constituent Republic[/b]
 [/list]
   A specialized diplomatic pact with high integration. Subjects retain limited
 autonomy but contribute significantly to the overlord’s economy and military.
 
 [list]
-[*][b]Dynamic Country Names[/b]  
+[*][b]Dynamic Country Names[/b]
   [*]Soviet-style republics automatically rename to “X SSR” when under Russian
-(or equivalent) socialist overlordship.  
+(or equivalent) socialist overlordship.
   [*]German socialist subjects under North/South German overlords receive “X
 Volkssektor” naming.
 [/list]
 
 [list]
-[*][b]Custom Government Type[/b]  
-  [*][b]Ducist Regime[/b] for Italy (titles: Duce / Ducessa).  
+[*][b]Custom Government Type[/b]
+  [*][b]Ducist Regime[/b] for Italy (titles: Duce / Ducessa).
   [*]Automatically applied when Italy adopts a fascist corporate-state
 government (if it works, this government type assignment system is screwing
 with me since forever).
@@ -40,27 +40,27 @@ with me since forever).
 [h3]Power Blocs & Federations[/h3]
 [list]
 [*][b]European Socialist Union (ESU)[/b] – optional ideological super-bloc led
-by North German Federation.  
+by North German Federation.
 [*][b]Union of Socialist States[/b] – fallback bloc for USSR-style playthroughs.
 [/list]
 
 [h3]Journal Entries[/h3]
 [list]
 [*][b]The Bolshevik Menace[/b] (Fascist Italy & other right-wing European
-nations) – tracks the spread of socialism and urges containment.  
+nations) – tracks the spread of socialism and urges containment.
 [*][b]Bringing the World Revolution[/b] (Socialist nations) – celebrates
 continental dominance and pushes for global socialist expansion.
 [/list]
 
 [h3]Events & Modifiers[/h3]
 [list]
-[*][b]Puppet Management Events[/b]  
+[*][b]Puppet Management Events[/b]
 [/list]
   Overlords can pressure socialist puppets to align fully with council-republic
 laws. Puppets may submit, resist (gaining claims on the overlord), or break
 free if ideological alignment fails.
 [list]
-[*][b]Strong Ideological Bias Modifiers[/b]  
+[*][b]Strong Ideological Bias Modifiers[/b]
 [/list]
   Permanent (decaying) state-level modifiers that massively boost communist or
 fascist political support, ensuring the starting ideological setup remains
@@ -92,7 +92,7 @@ socialist union.
     [*]Yugoslavia
     [*]Bulgaria
     [*]Albania
-    [*]and several Central Asian republics.  
+    [*]and several Central Asian republics.
 [/list]
 
 [list]
@@ -113,6 +113,6 @@ non-commercial use.
 
 [hr]
 
-[b]Enjoy the new ideological struggle![/b]  
+[b]Enjoy the new ideological struggle![/b]
 For feedback, bug reports, or suggestions, please contact either me or your
 next Volkskommissar.
