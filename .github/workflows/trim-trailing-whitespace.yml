@@ -8,4 +8,4 @@ on:
 jobs:
   trim-whitespace:
     if: github.event.pull_request.merged == true
-    uses: salva133/My-Workflows/.github/workflows/trim-trailing-whitespace.yml@70c9f5298a4b28bb4bfd5596a339d07642b19a89
+    uses: salva133/My-Workflows/.github/workflows/trim-trailing-whitespace.yml@6512f6250a807e134b648f32e7231ae71a44c544
