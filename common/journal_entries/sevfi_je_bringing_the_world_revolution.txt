@@ -3,7 +3,7 @@
 
 	group = je_group_crises
 
-	should_be_pinned_by_default = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
 	can_deactivate = yes
 
 	is_shown_in_lobby = {
