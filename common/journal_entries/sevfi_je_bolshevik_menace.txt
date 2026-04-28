@@ -7,17 +7,17 @@
 	can_deactivate = yes
 
 	is_shown_in_lobby = {
-		country_is_in_europe = yes
+		sevfi_country_is_in_europe = yes
 		country_has_ducist_government = yes
 	}
 
 	is_shown_when_inactive = {
-		country_is_in_europe = yes
+		sevfi_country_is_in_europe = yes
 		country_has_ducist_government = yes
 	}
 
 	possible = {
-		country_is_in_europe = yes
+		sevfi_country_is_in_europe = yes
 		country_has_ducist_government = yes
 	}
 
@@ -28,7 +28,7 @@
 	complete = {
 		any_country = {
 			count = 0
-			country_is_in_europe = yes
+			sevfi_country_is_in_europe = yes
 			has_law_or_variant = law_type:law_council_republic
 		}
 	}
@@ -40,7 +40,7 @@
 	fail = {
 		any_country = {
 			count = all
-			country_is_in_europe = yes
+			sevfi_country_is_in_europe = yes
 			has_law_or_variant = law_type:law_council_republic
 		}
 	}
