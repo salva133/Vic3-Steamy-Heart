@@ -2,7 +2,7 @@
   "name": "Starting Scenario: Socialist Europe vs Fascist Italy (SS:SEvFI) (ALPHA)",
   "id": "",
   "version": "0.0.23",
-  "supported_game_version": "1.13.0",
+  "supported_game_version": "1.13.*",
   "short_description": "Either the Soviet Union or the European Socialist Union exists at the start. Either way, this will unify Italy to the fascist Italian State.",
   "tags": [],
   "relationships": [],
