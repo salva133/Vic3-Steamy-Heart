@@ -9,4 +9,4 @@ on:
 
 jobs:
   create-steam_desc-from-README:
-    uses: salva133/My-Workflows/.github/workflows/create-steam_desc-from-README.yml@v1
+    uses: salva133/My-Workflows/.github/workflows/create-steam_desc-from-README.yml@latest

@@ -9,6 +9,6 @@ on:
 jobs:
   bump-build-number:
     if: github.event.pull_request.merged == true
-    uses: salva133/My-Workflows/.github/workflows/bump-build-number.yml@v1
+    uses: salva133/My-Workflows/.github/workflows/bump-build-number.yml@latest
     with:
       pr_number: ${{ github.event.pull_request.number }}
