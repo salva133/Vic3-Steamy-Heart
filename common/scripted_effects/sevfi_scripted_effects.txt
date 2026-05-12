@@ -1,4 +1,17 @@
-﻿set_up_socialist_gov = {
+﻿sevfi_activate_freeholder_law = {
+	if = {
+		limit = {
+			country_is_colonial_or_company = no
+			capital ?= { is_in_geographic_region = geographic_region_old_world }
+		}
+		activate_law = law_type:law_peasant_proprietorship
+	}
+	else = {
+		activate_law = law_type:law_homesteading
+	}
+}
+
+set_up_socialist_gov = {
 	give_additional_tech = yes
 	activate_law = law_type:law_council_republic
 	activate_law = law_type:law_single_party_state
@@ -27,7 +40,7 @@ set_up_soft_commie_gov = {
 	set_up_socialist_gov = yes
 	activate_law = law_type:law_total_separation
 	activate_law = law_type:law_cooperative_ownership
-	activate_law = law_type:law_homesteading
+	sevfi_activate_freeholder_law = yes
 }
 
 give_additional_tech = {
