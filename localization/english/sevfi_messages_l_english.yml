@@ -1,0 +1,4 @@
+l_english:
+  sevfi_constituent_broke_away_notif: "Constituent Republic Defects"
+  sevfi_constituent_broke_away_notif_desc: "A constituent republic in our orbit has rejected our leadership and declared its independence. The ideological bond no longer holds."
+  sevfi_constituent_broke_away_notif_tooltip: "[SCOPE.sCountry('breakaway_puppet').GetNameNoFlag] has left the federation."

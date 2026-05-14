@@ -9,3 +9,10 @@ modifier_strong_communist_bias = {
 
 	state_pop_support_movement_communist_add = 1000
 }
+
+resisted_ideological_pressure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+
+	country_legitimacy_base_add = 10
+	country_authority_mult = 0.05
+}

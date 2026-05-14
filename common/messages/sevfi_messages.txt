@@ -1,0 +1,11 @@
+sevfi_constituent_broke_away_notif = {
+	type = country
+	group = "diplomatic_notification_group"
+
+	texture = "gfx/interface/icons/notification_icons/secession.dds"
+
+	notification_type = toast
+	color = bad
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/Toasts/diplomatic_play_started"
+}
