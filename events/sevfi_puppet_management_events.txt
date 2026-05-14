@@ -4,42 +4,29 @@ puppet_management.1 = {
 	type = country_event
 	hidden = yes
 
+	# Fires on the constituent puppet itself, not globally.
 	trigger = {
-		any_country = {
-			is_subject = yes
-			has_diplomatic_pact = {
-				who = overlord
-				type = constituent_republic
-			}
-			has_law_or_variant = law_type:law_council_republic
-			overlord ?= {
-				NOT = {
-					has_law_or_variant = law_type:law_council_republic
-				}
-			}
+		is_subject = yes
+		has_diplomatic_pact = {
+			who = overlord
+			type = constituent_republic
+		}
+		has_law_or_variant = law_type:law_council_republic
+		overlord ?= {
+			has_radical_leftist_government = no
 		}
 	}
 
 	immediate = {
-		random_country = {
-			limit = {
-				is_subject = yes
-				has_diplomatic_pact = {
-					who = overlord
-					type = constituent_republic
-				}
-				has_law_or_variant = law_type:law_council_republic
-				overlord ?= {
-					NOT = {
-						has_law_or_variant = law_type:law_council_republic
-					}
-				}
-			}
-			change_relations = {
-				country = overlord
-				value = -200
-			}
-			make_independent = yes
+		overlord ?= { save_scope_as = former_overlord }
+		save_scope_as = breakaway_puppet
+		change_relations = {
+			country = overlord
+			value = -200
+		}
+		make_independent = yes
+		scope:former_overlord ?= {
+			post_notification = sevfi_constituent_broke_away_notif
 		}
 	}
 }
@@ -79,15 +66,12 @@ puppet_management.2 = {
 		default_option = yes
 
 		activate_law = law_type:law_council_republic
-		overlord = {
+		overlord ?= {
 			regime_change = scope:puppet
-			hidden_effect = {
-				create_diplomatic_pact = {
-					country = scope:puppet
-					type = constituent_republic
-				}
-			}
 		}
+		# Switch the existing subject pact to constituent_republic in-place
+		# rather than stacking a second pact on top of the current one.
+		change_subject_type = subject_type_constituent_republic
 		change_relations = {
 			country = overlord
 			value = 200
@@ -101,14 +85,35 @@ puppet_management.2 = {
 			country = overlord
 			value = -200
 		}
-		random_scope_state = {
+		if = {
 			limit = {
-				owner = {
-					is_adjacent_to_country = root.overlord
+				any_scope_state = {
+					owner = {
+						is_adjacent_to_country = root.overlord
+					}
 				}
 			}
-			state_region = {
-				add_claim = root.overlord
+			random_scope_state = {
+				limit = {
+					owner = {
+						is_adjacent_to_country = root.overlord
+					}
+				}
+				state_region = {
+					add_claim = root.overlord
+				}
+			}
+		}
+		else = {
+			# No shared border — overlord cannot press claims geographically.
+			# Instead they pay a reputational price, and the puppet gains
+			# a brief boost from successfully defying the ideological pressure.
+			overlord ?= {
+				change_infamy = 10
+			}
+			add_modifier = {
+				name = resisted_ideological_pressure
+				months = 60
 			}
 		}
 	}
