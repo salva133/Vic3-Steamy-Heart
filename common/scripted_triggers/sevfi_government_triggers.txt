@@ -1,6 +1,16 @@
-﻿country_has_ducist_government = {
+﻿# Ducism is Italy's signature ideology in this scenario. The trigger only
+# matches c:ITA, and only when ITA's laws + cultural profile fit the
+# Ducist mould. Two alternative legal silhouettes count:
+#   (A) corporatist autocracy that is NOT a Germanic ethnostate, NOT a
+#       non-ethnostate Austria, and NOT a Hispanophone-cultured country
+#       (those flavours of authoritarianism read as fascist of a
+#       different stripe and are excluded on purpose), or
+#   (B) a republican facade (presidential / parliamentary) with autocratic
+#       executive law and a fascist coat-of-arms profile.
+country_has_ducist_government = {
 	c:ITA ?= this
 	OR = {
+		# (A) Corporatist Ducist core.
 		AND = {
 			has_law_or_variant = law_type:law_corporate_state
 			OR = {
@@ -9,6 +19,7 @@
 				has_law_or_variant = law_type:law_single_party_state
 			}
 			NOR = {
+				# Germanic ethnostate -> reads as Nazi, not Ducist.
 				AND = {
 					has_law_or_variant = law_type:law_ethnostate
 					OR = {
@@ -16,17 +27,18 @@
 						country_has_primary_culture = cu:south_german
 					}
 				}
+				# Non-ethnostate Austria -> Austrofascism, distinct flavour.
 				AND = {
-					NOT = {
-						has_law_or_variant = law_type:law_ethnostate
-					}
+					NOT = { has_law_or_variant = law_type:law_ethnostate }
 					c:AUS ?= this
 				}
+				# Hispanophone primary culture -> Falangism / Latin variants.
 				any_primary_culture = {
 					has_discrimination_trait = language_hispanophone
 				}
 			}
 		}
+		# (B) Republican facade with fascist heraldry.
 		AND = {
 			OR = {
 				has_law_or_variant = law_type:law_presidential_republic
