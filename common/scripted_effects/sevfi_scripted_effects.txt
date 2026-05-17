@@ -167,6 +167,56 @@ make_all_politicians_fascist = {
 	}
 }
 
+# Convert this country to hard-commie and bind it to c:RUS as a constituent
+# republic. Called on the subject scope, e.g. c:AUS ?= { make_ussr_constituent = yes }.
+make_ussr_constituent = {
+	set_up_hard_commie_gov = yes
+	save_scope_as = new_constituent
+	c:RUS ?= { bind_constituent_republic = yes }
+}
+
+# Bind scope:new_constituent to the current overlord scope via the
+# constituent_republic pact and a relations bump. Caller is responsible for
+# preparing scope:new_constituent (typically by saving the subject country
+# right before invoking this helper).
+bind_constituent_republic = {
+	create_diplomatic_pact = {
+		country = scope:new_constituent
+		type = constituent_republic
+	}
+	change_relations = {
+		country = scope:new_constituent
+		value = 200
+	}
+}
+
+# Finalise a freshly-created USSR satellite: re-own homeland states, build
+# the standard construction/admin baseline, and (in USSR scenario) bind it
+# to RUS as a constituent republic. Caller must set scope:satellite to the
+# new subject country before invoking.
+finalise_ussr_satellite = {
+	every_state = {
+		limit = {
+			NOT = { owner = scope:satellite }
+			is_homeland_of_country_cultures = scope:satellite
+		}
+		set_state_owner = scope:satellite
+		incorporate_every_scope_state = yes
+	}
+	scope:satellite ?= {
+		create_building_and_government_buildings = yes
+	}
+	if = {
+		limit = { has_game_rule = create_ussr }
+		c:RUS ?= {
+			create_diplomatic_pact = {
+				country = scope:satellite
+				type = constituent_republic
+			}
+		}
+	}
+}
+
 TRY_INJECT:remove_subject_diplomatic_pact = {
 	if = {
 		limit = {
@@ -196,8 +246,5 @@ make_pops_literate_40_percent = {
 }
 
 incorporate_every_scope_state = {
-	if = {
-		limit = { is_incorporated = no }
-		set_state_type = incorporated
-	}
+	set_state_type = incorporated
 }
