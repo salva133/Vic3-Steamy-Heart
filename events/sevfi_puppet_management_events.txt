@@ -19,6 +19,7 @@ puppet_management.1 = {
 
 	immediate = {
 		overlord ?= { save_scope_as = former_overlord }
+		# Referenced by sevfi_constituent_broke_away_notif_tooltip.
 		save_scope_as = breakaway_puppet
 		change_relations = {
 			country = overlord
