@@ -21,10 +21,6 @@
 		country_has_ducist_government = yes
 	}
 
-	immediate = {
-
-	}
-
 	complete = {
 		any_country = {
 			count = 0
@@ -33,19 +29,11 @@
 		}
 	}
 
-	on_complete = {
-
-	}
-
 	fail = {
 		any_country = {
 			count = all
 			sevfi_country_is_in_europe = yes
 			has_law_or_variant = law_type:law_council_republic
 		}
-	}
-
-	on_fail = {
-
 	}
 }
