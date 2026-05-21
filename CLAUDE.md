@@ -109,6 +109,18 @@ Binary assets (`*.dds`, `*.png`, `*.tga`, `*.ttf`, `*.otf`, `*.ogg`, `*.bank`) a
 
 `.gitignore` excludes vanilla mirror folders kept locally for reference (`dlc/`, `soundtrack/`, `fonts/`, `map_data/`) plus scratch artifacts (`changes.txt`, `localizations_*.txt`, `scripts_*.txt`, `diff.txt`). Keep new throwaway tooling output matching those patterns.
 
+## Scripting rules
+
+Every `ordered_*` script-list block (`ordered_scope_state`, `ordered_scope_pop`, `ordered_diplomatically_relevant_country`, `ordered_scope_war`, …) MUST include `check_range_bounds = no`. Without it, Jomini logs `jomini_scriptlists.cpp:406: Given position was bigger than the list, capping at list size` whenever `position` overshoots the list size. Apply to every such block, including nested ones — no exceptions.
+
+## File encoding
+
+All script (`.txt`) and localization (`.yml`) files MUST be saved as **UTF-8 with BOM**. Without the BOM Vic3 spams `lexer.cpp:285: should be in utf8-bom encoding (will try to use it anyways)` for `.txt` and the `localize.cpp:1974` / `localization_reader.cpp:402` equivalents for `.yml`. Preserve the BOM on edit; add it when creating new files.
+
+## Log analysis
+
+When auditing `Documents/Paradox Interactive/Victoria 3/logs/` for mod issues, read only the *current-session* logs — the files **without** a numbered suffix (`error.log`, `game.log`, `debug.log`, …). The rollover files (`error.1.log` … `error.5.log`, `game.1.log` …) hold entries from earlier sessions and frequently reference issues already fixed.
+
 ## CHANGELOG / README
 
 Per project instruction, CHANGELOG and README entries describe *what the player notices*, not implementation details. The README's framing — game rule, new countries, subject type, journal entries, puppet-management events — is the player-facing structure; keep new release entries within those buckets rather than reorganising by file or by mechanic. The "Alpha — not yet fully balanced" disclaimer stays until the mod settles.
